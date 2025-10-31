@@ -3,7 +3,7 @@ import { Calculator, Zap, Droplet, Wifi, Users, DollarSign, CheckCircle, AlertCi
 
 export default function BillCalculator() {
   const [step, setStep] = useState(1);
-  const [users] = useState(['Tuhin', 'Kartic', 'Ashik', 'Sohag']);
+  const [users] = useState(['Tuhin', 'Kartic', 'Hamza', 'Sohag']);
   const [month] = useState('October');
   const [eBillRef] = useState(800);
   const [wifiBill] = useState(740);
