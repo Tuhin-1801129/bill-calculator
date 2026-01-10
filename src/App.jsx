@@ -4,7 +4,12 @@ import { Calculator, Zap, Droplet, Wifi, Users, DollarSign, CheckCircle, AlertCi
 export default function BillCalculator() {
   const [step, setStep] = useState(1);
   const [users] = useState(['Tuhin', 'Nafees', 'Hamza', 'Sohag']);
-  const [month] = useState('October');
+  const today = new Date();
+
+  const month = today.toLocaleString('default', { month: 'long' });
+  const year = today.getFullYear();
+
+
   const [eBillRef] = useState(800);
   const [wifiBill] = useState(740);
   
@@ -354,7 +359,9 @@ export default function BillCalculator() {
             <div className="text-center">
               <Calculator className="w-16 h-16 mx-auto mb-4 text-indigo-500" />
               <h2 className="text-3xl font-bold mb-2">Bill Summary</h2>
-              <p className="text-gray-600">{month}, 2025</p>
+              
+              <p className="text-gray-600">{month}, {year}</p>
+
             </div>
 
             <div className="grid grid-cols-3 gap-4">
