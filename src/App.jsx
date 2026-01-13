@@ -77,11 +77,12 @@ export default function BillCalculator() {
 
   const calculateBills = () => {
     const nPpl = users.length;
-    if(eBillTotal>eBillRef){
-    const eBillPrsn = eBillRef / nPpl;
-    }else{
-    const eBillPrsn = eBillTotal / nPpl;
-    }
+    const eBillTotalNum = parseFloat(eBillTotal);
+    
+   // Base electricity bill per person (using reference if total exceeds it)
+    const eBillPrsn = eBillTotalNum > eBillRef ? eBillRef / nPpl : eBillTotalNum / nPpl;
+   
+
     const wBillPrsn = parseFloat(wBillTotal) / nPpl;
     const wifiPerPayer = wifiPayers.length > 0 ? wifiBill / wifiPayers.length : 0;
     
