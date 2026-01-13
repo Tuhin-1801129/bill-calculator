@@ -77,7 +77,11 @@ export default function BillCalculator() {
 
   const calculateBills = () => {
     const nPpl = users.length;
+    if(eBillTotal>eBillRef){
     const eBillPrsn = eBillRef / nPpl;
+    }else{
+    const eBillPrsn = eBillTotal / nPpl;
+    }
     const wBillPrsn = parseFloat(wBillTotal) / nPpl;
     const wifiPerPayer = wifiPayers.length > 0 ? wifiBill / wifiPayers.length : 0;
     
